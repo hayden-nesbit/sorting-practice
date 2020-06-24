@@ -10,10 +10,12 @@ function App() {
       <div className="container bg-primary p-4 text-white rounded mb-3">
         <Bubble />
       </div>
-      <div className="container bg-success p-4 text-white rounded">
+      <div className="container bg-success p-4 text-white rounded mb-3">
         <Insertion />
       </div>
-      <Quick />
+      <div className="container bg-warning p-4 text-white rounded">
+        <Quick />
+      </div>
     </div>
   );
 }

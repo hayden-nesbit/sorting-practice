@@ -6,9 +6,8 @@ function Insertion() {
     const [input, setInput] = useState([])
     const [array, setArray] = useState([])
 
-    console.log(input)
-
-    function handleSubmit() {
+    function handleSubmit(e) {
+        e.preventDefault()
         let arr = input.split("")
         arr = arr.filter(item => item !== ",")
         setArray(arr)
@@ -26,8 +25,6 @@ function Insertion() {
         }
         return arr.toString()
     }
-
-    let given = [9, 2, 3, 1, 5, 7, 2]
 
     return (
         <>
