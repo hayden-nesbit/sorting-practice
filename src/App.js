@@ -54,6 +54,16 @@ function App() {
     return QuickSort(left).concat(pivot, QuickSort(right))
   }
 
+  //Add a new function below this line//
+  
+  //Send the following information through a new Algorithm component in the return:
+      //function
+      //name
+      //description
+      //id
+      //code
+      //contributor
+      //link
 
   return (
     <>
@@ -80,7 +90,7 @@ function App() {
                             return arr.toString()
              }
             `}
-            contributer={"Hayden Nesbit"}
+            contributor={"Hayden Nesbit"}
             link={"https://github.com/hayden-nesbit"}
         />
       </div>
@@ -104,7 +114,7 @@ function App() {
                         return arr.toString() 
              }
           `}
-          contributer={"Hayden Nesbit"}
+          contributor={"Hayden Nesbit"}
           link={"https://github.com/hayden-nesbit"}
         />
       </div>
@@ -134,7 +144,7 @@ function App() {
                 return QuickSort(left).concat(pivot, QuickSort(right))  
               }
           `}
-          contributer={"Hayden Nesbit"}
+          contributor={"Hayden Nesbit"}
           link={"https://github.com/hayden-nesbit"}
         />
       </div>
