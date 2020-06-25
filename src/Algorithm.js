@@ -7,16 +7,19 @@ function Algorithm(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        let arr = input.split("")
-        arr = arr.filter(item => item !== ",")
+        let arr = input.split(",")
+        console.log(arr)
+        // arr = arr.filter(item => item !== ",")
         setArray(arr)
     }
+
+    console.log(array)
 
     return (
         <div className={props.className}>
             <h1 className="">{props.name}</h1>
             <div className="row mt-4">
-                <div className="col-6 text-left">
+                <div className="col-md-6 col-12 text-left">
                     <div className="row">
                         <div className="col">
                             <h4 className="">DESCRIPTION:</h4>
@@ -29,23 +32,23 @@ function Algorithm(props) {
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group col">
                                     <input onChange={(e) => setInput(e.target.value)} value={input} type="text" className="form-control" id="inputZip" />
-                                    <label className="text-light">Ex. 1,5,3, or 153</label>
+                                    <label className="text-light">Ex. 1,5,8,3</label>
                                 </div>
                             </form>
-                            {/* <h5 className="mb-3">{given.toString()}</h5> */}
                         </div>
                         <div className="col">
                             <h4>SORTED:</h4>
-                            <h5>{array.length > 0 ? props.function(array) : null}</h5>
+                            <h5>{array.length > 1 ? props.function(array).toString() : array.length === 1 ? <i>invalid entry</i> : null}</h5>
                         </div>
                     </div>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-12">
                     <h4>CODE:</h4>
                     <pre id={props.id} className="rounded">
                         {props.code}
 
                     </pre>
+                    <small className="text-light float-right">by <a className="text-light" href={props.link}>{props.contributer}</a></small>
                 </div>
             </div>
         </div>
