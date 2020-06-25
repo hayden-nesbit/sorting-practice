@@ -1,15 +1,17 @@
 import React from 'react';
 import './App.css';
 import Algorithm from './Algorithm'
+import Footer from './Footer'
 
 function App() {
 
   function BubbleSort(arr) {
+
     let swapped;
     do {
       swapped = false;
       for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > arr[i + 1]) {
+        if (Number(arr[i]) > Number(arr[i + 1])) {
           let tmp = arr[i]
           arr[i] = arr[i + 1]
           arr[i + 1] = tmp
@@ -17,20 +19,21 @@ function App() {
         }
       }
     } while (swapped)
-    return arr.toString()
+    return arr
   }
 
   function InsertionSort(arr) {
+
     for (let i = 1; i < arr.length; i++) {
-      let key = arr[i]
+      let key = Number(arr[i])
       let j = i - 1
-      while (j >= 0 && arr[j] > key) {
-        arr[j + 1] = arr[j]
+      while (j >= 0 && Number(arr[j]) > key) {
+        arr[j + 1] = Number(arr[j])
         j = j - 1
       }
       arr[j + 1] = key;
     }
-    return arr.toString()
+    return arr
   }
 
   function QuickSort(arr) {
@@ -39,20 +42,22 @@ function App() {
       return arr;
     }
 
-    let pivot = arr[0];
+    let pivot = Number(arr[0]);
     let left = [];
     let right = [];
 
     for (let i = 1; i < arr.length; i++) {
-      arr[i] < pivot ? left.push(arr[i]) : right.push(arr[i]);
+      Number(arr[i]) < pivot ? left.push(arr[i]) : right.push(arr[i]);
     }
-    return QuickSort(left).concat(pivot, QuickSort(right)).toString();
+
+    
+    return QuickSort(left).concat(pivot, QuickSort(right))
   }
 
 
   return (
-    <div className="container text-center p-5">
-      <div className="container bg-primary p-4 text-white rounded mb-3">
+    <>
+      <div className="bg-primary p-4 text-white ">
         <Algorithm
           function={BubbleSort}
           name={"Bubble Sort"}
@@ -75,9 +80,11 @@ function App() {
                             return arr.toString()
              }
             `}
+            contributer={"Hayden Nesbit"}
+            link={"https://github.com/hayden-nesbit"}
         />
       </div>
-      <div className="container bg-success p-4 text-white rounded mb-3">
+      <div className="bg-success p-4 text-white ">
         <Algorithm
           function={InsertionSort}
           name={"Insertion Sort"}
@@ -97,37 +104,42 @@ function App() {
                         return arr.toString() 
              }
           `}
+          contributer={"Hayden Nesbit"}
+          link={"https://github.com/hayden-nesbit"}
         />
       </div>
-      <div className="container bg-warning p-4 text-white rounded">
+      <div className="bg-warning p-4 text-white ">
         <Algorithm
           function={QuickSort}
           name={"Quick Sort"}
           description={"Quicksort is a divide and conquer algorithm which relies on a partition operation: to partition an array, an element called a pivot is selected. All elements smaller than the pivot are moved before it and all greater elements are moved after it."}
           id={"quick"}
           code={`
-          function QuickSort(arr) {
+    function QuickSort(arr) {
 
-                    if (arr.length <= 1) {
-                      return arr;
-                    }
+                if (arr.length <= 1) {
+                  return arr;
+                }
 
-                    let pivot = arr[0];
-                    let left = [];
-                    let right = [];
+                let pivot = arr[0];
+                let left = [];
+                let right = [];
 
-                    for (let i = 1; i < arr.length; i++) {
-                        arr[i] < pivot ? 
-                        left.push(arr[i]) 
-                        : 
-                        right.push(arr[i]);
-                      }
-                    return QuickSort(left).concat(pivot, QuickSort(right))
+                for (let i = 1; i < arr.length; i++) {
+                    arr[i] < pivot ? 
+                    left.push(arr[i]) 
+                    : 
+                    right.push(arr[i]);
                   }
+                return QuickSort(left).concat(pivot, QuickSort(right))  
+              }
           `}
+          contributer={"Hayden Nesbit"}
+          link={"https://github.com/hayden-nesbit"}
         />
       </div>
-    </div>
+      <Footer />
+</>
   );
 }
 
