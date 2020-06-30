@@ -1,3 +1,14 @@
+This project is dynamic and able to be easily added to. To do so, just make a new function on the App.js level, add a new <Algorithm /> component in a new container, and send down the algorithm information via props:
+    "function",
+    "name",
+    "description",
+    "id",
+    "code",
+    "contributer" as your name,
+    "link" as your Github
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
