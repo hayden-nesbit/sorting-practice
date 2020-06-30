@@ -87,7 +87,7 @@ function App() {
                             }
                         }
                      } while (swapped)
-                            return arr.toString()
+                            return arr
              }
             `}
             contributor={"Hayden Nesbit"}
@@ -111,7 +111,7 @@ function App() {
                           }
                           arr[j + 1] = key;
                       }
-                        return arr.toString() 
+                        return arr
              }
           `}
           contributor={"Hayden Nesbit"}

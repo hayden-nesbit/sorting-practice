@@ -48,7 +48,7 @@ function Algorithm(props) {
                         {props.code}
 
                     </pre>
-                    <small className="text-light float-right">by <a className="text-light" href={props.link}>{props.contributor}</a></small>
+                    <small className="text-light float-right">by <a className="text-light" href={props.link} target="_blank">{props.contributor}</a></small>
                 </div>
             </div>
         </div>
